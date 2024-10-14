@@ -146,7 +146,8 @@ def main():
 
         # 响应用户的操作
         for event in pygame.event.get():
-            if event.type == 12:  # 如果用户按下屏幕上的关闭按钮，触发QUIT事件，程序退出
+            if event.type == pygame.KEYDOWN:  # 如果用户按下屏幕上的关闭按钮，触发QUIT事件，程序退出
+               if event.key == pygame.K_ESCAPE:  # 检查按下的键是否为Esc
                 pygame.quit()
                 sys.exit()
 
